@@ -11,6 +11,11 @@ export default {
     return {
       msg: 'Welcome to Your Vue.js App'
     }
+  },
+  created() {
+    this.$http.get('api/user').then(response => {
+      console.log(response)
+    }, response => {})
   }
 }
 </script>
