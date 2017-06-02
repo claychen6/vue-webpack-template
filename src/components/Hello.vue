@@ -5,6 +5,8 @@
   </div>
 </template>
 <script>
+import * as Common from '../apis/common.js'
+
 export default {
   name: 'hello',
   data() {
@@ -13,9 +15,9 @@ export default {
     }
   },
   created() {
-    this.$http.get('api/user').then(response => {
+    Common.test().then(response => {
       console.log(response)
-    }, response => {})
+    })
   }
 }
 </script>

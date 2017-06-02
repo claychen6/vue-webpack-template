@@ -29,9 +29,12 @@ module.exports = {
     assetsPublicPath: '/',
     proxyTable: {
       // proxy all requests starting with /api to jsonplaceholder
-      '/api': {
-        target: 'http://ssc.app/1.0',
-        changeOrigin: true
+      '/api/1.0': {
+        target: 'http://localhost',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api/1.0': ''
+        }
       }
     },
     // CSS Sourcemaps off by default because relative paths are "buggy"
